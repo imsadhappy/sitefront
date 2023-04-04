@@ -1,0 +1,148 @@
+html.sitefront {
+
+    body.theme-sitefront {
+
+        .storefront-handheld-footer-bar {
+
+            background: rgba(255,255,255,0.98);
+            @include top-shadow-border;
+
+            &.borderless {
+                border-top: 0;
+                box-shadow: none;
+            }
+
+            > ul.columns-5 > li {
+                width: auto;
+            }
+
+            > ul > li {
+
+                width: 20% !important;
+
+                > a {
+                    background: transparent;
+                    height: 3em;
+                    -webkit-tap-highlight-color: transparent;
+                    &::before {
+                        line-height: 48px;
+                        font-size: 20px;
+                    }
+                }
+
+                &.cart .count {
+                    width: auto;
+                    height: auto;
+                    padding: .2em .4em;
+                    line-height: 1;
+                    top: .8em;
+                }
+
+                &.home {
+
+                    > a::before {
+                        content: "\f015";
+                    }
+
+                    > a.back::before {
+                        content: "\f359";
+                        font-size: 24px;
+                    }
+                }
+
+                &.menu > a::before {
+                    content: "\f0c9";
+                }
+
+                &.search {
+
+                    .site-search {
+                        background: rgba(255,255,255,0.98);
+                        opacity: 0;
+                        -webkit-transition: none !important;
+                        transition: none !important;
+                    }
+
+                    &.active .site-search {
+
+                        opacity: 1;
+                        padding: 0;
+                        padding: 10px 10px 4px;
+                        background: rgba(255,255,255,.98);
+                        margin-bottom: 0;
+                        @include top-rounded-card;
+
+                        [type="search"] {
+                            background-color: rgba(0,0,0,.06);
+                        }
+                    }
+                }
+            }
+
+            .my-account-navigation {
+
+                position: absolute;
+                opacity: 0;
+                left: 0;
+                right: 0;
+                bottom: -500px;
+                -webkit-transition: none;
+                transition: none;
+
+                &.active {
+                    opacity: 1;
+                    padding: .2em 0;
+                    bottom: 48px;
+                    background: rgba(255,255,255,.98);
+                    overflow: hidden;
+                    @include top-rounded-card;
+                }
+
+                nav.woocommerce-MyAccount-navigation,
+                nav.bp-profile-navigation {
+
+                    li {
+
+                        float: none;
+                        display: block;
+                        position: relative;
+                        width: auto;
+
+                        a {
+
+                            text-indent: 0;
+                            text-align: left;
+                            text-decoration: none;
+                            line-height: 3em;
+                            font-weight: bold;
+                            height: 3em;
+                            border-bottom: 1px solid rgba(0,0,0,.05);
+                            background: transparent;
+
+                            &:before {
+                                font-size: 1.2em;
+                                opacity: 1;
+                                margin: 7px 0 0 auto;
+                            }
+                        }
+                    }
+                }
+
+                nav.bp-profile-navigation {
+                   li a span {
+                        float: right;
+                   }
+                }
+            }
+        }
+
+        &.woocommerce-cart,
+        &.woocommerce-checkout:not(.woocommerce-order-pay),
+        &:not(.footer-bar-search-visible) .extend-footer-bar ~ {
+            .storefront-handheld-footer-bar {
+                border-top: 0;
+                box-shadow: none;
+            }
+        }
+    }
+}

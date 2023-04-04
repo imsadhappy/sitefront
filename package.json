@@ -1,0 +1,16 @@
+{
+  "name": "Sitefront",
+  "version": "1.0.0",
+  "description": "Sitefront is a childtheme of Storefront",
+  "main": "assets/js/scripts.js",
+  "author": "imsadhappy",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "node-sass": "^4.12.0"
+  }
+}

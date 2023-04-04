@@ -1,0 +1,222 @@
+* {
+    @include font-smoothing;
+}
+::selection {
+    @include selection;
+}
+::-moz-selection {
+    @include selection;
+}
+::-webkit-input-placeholder {
+    @include font-smoothing;
+    @include placeholder;
+}
+::-moz-placeholder {
+    @include font-smoothing;
+    @include placeholder;
+}
+:-moz-placeholder {
+    @include font-smoothing;
+    @include placeholder;
+}
+:-ms-input-placeholder {
+    @include font-smoothing;
+    @include placeholder;
+}
+*::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 5px;
+    height: 5px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: $black;
+}
+*::-webkit-scrollbar-track {
+    background-color: $white;
+}
+
+html {
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+
+body,
+input,
+label,
+select,
+button,
+textarea {
+    font-weight: 400;
+    font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 "Segoe UI",
+                 Roboto,
+                 Oxygen,
+                 Ubuntu,
+                 Cantarell,
+                 "Open Sans",
+                 "Helvetica Neue",
+                 Helvetica,
+                 Arial,
+                 "Lucida Grande",
+                 sans-serif;
+}
+
+img {
+    border-radius: 0;
+}
+
+.text-smaller {
+    font-size: 85%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.alpha,
+.beta,
+.gamma,
+.delta { font-weight: 700 }
+
+h1, .alpha { font-size: 34px }
+h2, .beta { font-size: 28px }
+h3, .gamma { font-size: 22px }
+h4, .delta { font-size: 18px }
+h5 { font-size: 16px }
+h6 { font-size: 14px }
+
+h2 + h3, .beta + h3 {
+    border-top: 0;
+    padding-top: 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a { font-weight: 700 }
+
+a,
+input,
+select,
+button,
+textarea,
+.button,
+.button.alt,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+    &:focus {
+        outline: 0 none;
+    }
+}
+
+input[type], select, button, .button {
+    border-radius: 40px;
+    min-width: 80px;
+    text-decoration: none;
+}
+
+a[class^="wp-block-button"] {
+    border-radius: 40px !important;
+    min-width: 80px !important;
+    text-decoration: none !important;
+}
+
+input[type="number"],
+input[type="radio"],
+input[type="checkbox"] {
+    min-width: 0;
+}
+
+input[type="button"], button, .button {
+    text-align: center;
+}
+
+textarea {
+    border-radius: 20px;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
+textarea,
+.input-text {
+    max-width: 100%;
+}
+
+select {
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+
+    .input-text {
+        -webkit-appearance: listbox;
+        outline: 0 !important;
+    }
+}
+
+.button {
+    @include transform-scale;
+}
+
+label.woocommerce-form-login__rememberme {
+    float: right;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+*:not(.widget) > .search-form {
+
+    white-space: nowrap;
+
+    .search-field {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .search-submit {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: -5px;
+    }
+}
+
+html.sitefront {
+
+    body.theme-sitefront {
+
+        table {
+            &, &.cart {
+                td, th {
+                    padding: 1em;
+                }
+            }
+            &:not(.has-background) tbody tr td {
+                background: transparent;
+            }
+        }
+    }
+}
+
+.storefront-sorting {
+    text-align: center;
+}
+
+body.single .edit-link {
+    display: none;
+}

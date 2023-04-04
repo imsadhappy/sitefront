@@ -1,0 +1,275 @@
+$white: #FFFFFF;
+$black: #000000;
+$gray1: #CCCCCC;
+$gray2: #999999;
+$gray3: #EEEEEE;
+$gray4: #F1F1F1;
+$green: #5BBC93;
+$yellow: #fdd12e;
+$red: #f43e50;
+$primary: $green;
+$warning: $yellow;
+$alert: $red;
+$error: $red;
+$secondary: $yellow;
+
+$marg: 2.617924em;
+$margin: 8px;
+$margin-em: .5em;
+$margin-rem: .5rem;
+$margin7: 7.6923%;
+$header-height: 56px;
+$margin-p-bottom: 1.5em;
+$margin-p: $margin-p-bottom;
+$after-header-indentation: $header-height - 1;
+
+$font-family-base: "Roboto", Arial, Helvetica, sans-serif;
+$font-family-icons: "Genericons";
+$font-family-input: $font-family-base;
+$font-family-mono: Inconsolata, monospace;
+$font-family-title: $font-family-base;
+
+$border1: 3px solid $black;
+$border2: 1px solid $gray3;
+$border-radius: 8px;
+$content-max-width: 1320px;
+
+$content-padding0910: 0 4.5455%;
+
+$font-size-base:          14px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-size-h1:            floor(($font-size-base * 2)) !default; // ~36px
+$font-size-h2:            floor(($font-size-base * 1.75)) !default; // ~30px
+$font-size-h3:            ceil(($font-size-base * 1.5)) !default; // ~24px
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$iOSindentation: 20px;
+
+$AndroidIndentation: 0;
+
+@mixin margin($type, $x) {
+    @if $type == 'all' {
+        margin: ($margin * $x);
+    }
+    @else {
+        margin-#{$type}: ($margin * $x);
+    }
+}
+
+@mixin transition($x) {
+    transition: all #{$x}s ease-in;
+}
+
+@mixin selection {
+    background: rgba($black, .9);
+    color: $white;
+    text-shadow:none;
+}
+
+@mixin placeholder {
+    color: darken($gray1, 30%);
+    font-weight: 300;
+    text-shadow:none;
+}
+
+@mixin box-shadow {
+    box-shadow: 0 0 $margin $gray1;
+}
+
+@mixin font-smoothing {
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+@mixin full-width-height {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin absolute-top {
+    position: absolute;
+    top: 0;
+}
+
+@mixin absolute-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+@mixin absolute-left {
+    position: absolute;
+    left: 0;
+}
+
+@mixin absolute-right {
+    position: absolute;
+    right: 0;
+}
+
+@mixin absolute-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin absolute-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@mixin absolute-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin absolute-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@mixin absolute($w: null, $x: null, $y: null, $z: null) {
+    position: absolute;
+    @if ($w) {
+        #{$w}: 0;
+    }
+    @if ($x) {
+        #{$x}: 0;
+    }
+    @if ($y) {
+        #{$y}: 0;
+    }
+    @if ($z) {
+        #{$z}: 0;
+    }
+}
+
+@mixin border-radius($x: null) {
+    @if ($x) {
+        border-radius: $x;
+    }
+    @else {
+        border-radius: $border-radius;
+    }
+}
+
+@mixin no-selection {
+    background: transparent !important;
+    color: inherit !important;
+    text-shadow:none !important;
+}
+
+@mixin input-disabled {
+    cursor: default;
+    box-shadow: 0 0 !important;
+}
+
+@mixin color-disabled-background {
+    &.disabled,
+    &:disabled {
+        color: rgba($background, .4);
+    }
+}
+
+@mixin ellipsed {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin not-ellipsed {
+    white-space: normal;
+    overflow: visible;
+}
+
+@mixin appearance-none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+@mixin top-shadow-border {
+    box-shadow: 0 -3px 6px -3px rgba(0,0,0,.05);
+    border-top: 1px solid rgba(0,0,0,.15);   
+}
+
+@mixin top-rounded-card {
+    @include top-shadow-border;
+    border-radius: 30px 30px 0 0;
+}
+
+@mixin transform-scale {
+
+    -webkit-transition: transform .3s ease;
+    transition: transform .3s ease;
+
+    &.touched,
+    &:hover {
+        transform: scale(.95);
+    }
+}
+
+@mixin fixed-fix {
+  &, * {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    &a {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@-moz-keyframes marquee {
+ 0%   { -moz-transform: translateX(0%); }
+ 100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes marquee {
+ 0%   { -webkit-transform: translateX(0%); }
+ 100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes marquee {
+ 0%   { 
+ -moz-transform: translateX(0%); /* Firefox bug fix */
+ -webkit-transform: translateX(0%); /* Firefox bug fix */
+ transform: translateX(0%);       
+ }
+ 100% { 
+ -moz-transform: translateX(-100%); /* Firefox bug fix */
+ -webkit-transform: translateX(-100%); /* Firefox bug fix */
+ transform: translateX(-100%); 
+ }
+}
+
+:root {
+    --safe-area-inset-top:      0;
+    --safe-area-inset-right:    0;
+    --safe-area-inset-bottom:   0;
+    --safe-area-inset-left:     0;
+}
+
+/* iOS 11.0: supports constant() css function. (Assume all other inset vars are supported.) */
+@supports (padding-top: constant(safe-area-inset-top))  {
+    :root {
+        --safe-area-inset-top:      constant(safe-area-inset-top, 0);
+        --safe-area-inset-right:    constant(safe-area-inset-right, 0);
+        --safe-area-inset-bottom:   constant(safe-area-inset-bottom, 0);
+        --safe-area-inset-left:     constant(safe-area-inset-left, 0);
+    }
+}
+
+/* iOS 11.2 and latest Chrome webviews support the env() css function. (Assume all other inset vars are supported.) */
+@supports (padding-top: env(safe-area-inset-top))  {
+    :root {
+        --safe-area-inset-top:      env(safe-area-inset-top, 0);
+        --safe-area-inset-right:    env(safe-area-inset-right, 0);
+        --safe-area-inset-bottom:   env(safe-area-inset-bottom, 0);
+        --safe-area-inset-left:     env(safe-area-inset-left, 0);
+    }
+}

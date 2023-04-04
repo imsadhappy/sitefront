@@ -1,0 +1,50 @@
+
+.site-footer {
+
+    padding: 0;
+    //background-color: #FFF;
+
+    &.fixed {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .site-info {
+        
+        font-size: 80%;
+
+        > br:first-of-type {
+            display: contents;
+        }
+
+        > a {
+            &:first-of-type {
+                margin-left: 10px;
+            }
+            + a {
+
+                margin-left: 5px;
+
+                &:before {
+                    content: '|';
+                    margin-right: 5px;
+                    opacity: .5;
+                }
+            }
+
+            &.developer {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .site-info { display: none; }
+}

@@ -1,0 +1,143 @@
+html.sitefront {
+
+    body.theme-sitefront {
+
+        .main-navigation,
+        .primary-navigation {
+
+            background-color: inherit;
+
+            ul {
+
+                background-color: inherit;
+
+                li {
+
+                    background-color: inherit;
+
+                    a {
+                        background-color: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#site-navigation {
+
+    .primary-navigation {
+
+        ul.sub-menu {
+
+            border: 1px solid #F0F0F0;
+            border-top-width: 0;
+
+            a {
+                padding: 0 1em 1em;
+            }            
+        }
+
+        a {
+            padding: 1em;
+        }
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu-item.lang-item img {
+        display: inline-block;
+    }
+
+    .handheld-navigation {
+
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        padding: .2em 0 .2em;
+        background: rgba(255,255,255,0.98);
+        -webkit-transition: none;
+        transition: none;
+        @include top-rounded-card;
+
+        > ul {
+
+            margin-left: 1.41575em;
+            margin-right: 1.41575em;
+
+            > li {
+
+                border-bottom: 1px solid rgba(0,0,0,.05);
+                padding: 0;
+
+                a {
+                    padding: 10px 0;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .dropdown-toggle {
+            
+            min-width: 0;
+            padding-left: 0;
+            padding-right: 0;
+            
+            &::after {
+                transition: none;
+            }
+        }
+
+        ul.sub-menu {
+            
+            margin-left: 0;
+            transition: none;
+
+            li {
+
+                border-top: 1px solid rgba(0,0,0,.05);
+
+                a {
+                    opacity: .5
+                }
+            }
+        }
+    }
+
+    &.toggled .handheld-navigation {
+        opacity: 1;
+        bottom: 47px;
+    }
+}
+
+.sitefront-header.no-cart {
+
+    .main-navigation {
+        float: right;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .handheld-navigation,
+    #site-navigation.toggled .handheld-navigation,
+    #site-navigation.toggled div.menu,
+    .menu-toggle {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html.sitefront {
+        body.theme-sitefront {
+            .site-header .site-search,
+            .primary-navigation {
+                display: none !important;
+            }
+        }
+    }
+}

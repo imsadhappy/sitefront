@@ -1,0 +1,138 @@
+/**
+ * 3.0 - Typography
+ */
+
+body, button, input, select, textarea {
+  color: $black;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  //font-size: 1.125rem;
+  line-height: $font-size-base * 1.8;
+  //line-height: 1.625rem;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: 700;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+
+.bold, .b, .strong {
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 $margin-p-bottom;
+}
+
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+blockquote {
+  border: 0 solid $black;
+  border-left-width: 4px;
+  color: $gray2;
+  font-size: 19px;
+  font-size: 1.1875rem;
+  font-style: italic;
+  line-height: 1.4736842105;
+  margin: 1.4736842105em 0;
+  padding: 0 0 0 1.263157895em;
+  quotes: none;
+}
+
+q {
+  quotes: none;
+}
+
+blockquote {
+  &:before, &:after {
+    content: "";
+  }
+}
+
+q {
+  &:before, &:after {
+    content: "";
+  }
+}
+
+blockquote {
+  p {
+    margin-bottom: 1.4736842105em;
+  }
+  cite, small {
+    color: $black;
+    display: block;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  cite:before, small:before {
+    content: "\2014\00a0";
+  }
+  em, i, cite {
+    font-style: normal;
+  }
+  strong, b {
+    font-weight: 400;
+  }
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+address {
+  font-style: italic;
+  margin: 0 0 1.75em;
+}
+
+code, kbd, tt, var, samp {
+  font-family: $font-family-mono;
+}
+
+pre {
+  font-family: $font-family-mono;
+  border: 1px solid $gray1;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.3125;
+  margin: 0 0 1.75em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.75em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  background-color: $gray1;
+  padding: 0.125em 0.25em;
+}
+
+abbr, acronym {
+  border-bottom: 0 !important;
+  cursor: help;
+}
+
+mark, ins {
+  background: $green;
+  color: $white;
+  padding: 0.125em 0.25em;
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}

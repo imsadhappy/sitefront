@@ -1,0 +1,47 @@
+html.sitefront {
+
+    body.theme-sitefront {
+
+		#buddypress {
+
+			input {
+
+				&[type="submit"] {
+					@extend .button;
+				}
+			}
+
+			form fieldset {
+
+				background: transparent;
+
+				legend {
+					background: inherit;
+					padding: 0;
+				}
+			}
+		}
+
+		&.bp-user {
+			.page {
+				> .entry-header {
+					display: none;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+
+	html.sitefront {
+
+	    body.theme-sitefront {
+
+			&.bp-user {
+				#object-nav {
+					display: none;
+				}
+			}
+		}
+	}
+}

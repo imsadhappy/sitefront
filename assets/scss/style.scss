@@ -1,0 +1,30 @@
+/*!
+Theme Name:   Sitefront
+Template:     storefront
+Theme URI:    https://developtimization.com/sitefront.php
+Author:       imsadhappy
+Author URI:   https://www.developtimization.com/
+Description:  Sitefront is a childtheme of Storefront
+Version:      0.2.266
+License:      GNU General Public License v2 or later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  sitefront
+Tags:         e-commerce, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, threaded-comments, accessibility-ready, rtl-language-support, footer-widgets, sticky-post, theme-options, editor-style
+*/
+
+@import "variables";
+//@import "normalize";
+@import "general";
+@import "header";
+@import "footer";
+@import "content";
+@import "navigation";
+@import "pagination";
+@import "comments";
+@import "footerbar";
+@import "woocommerce";
+@import "buddypress";
+@import "my-account";
+@import "product";
+@import "modules";
+@import "helpers";

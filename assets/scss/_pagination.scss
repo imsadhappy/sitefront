@@ -1,0 +1,63 @@
+.site-main nav.navigation .nav-previous a,
+.site-main nav.navigation .nav-next a,
+.more-link {
+    font-weight: 700;
+}
+
+.backlink::before,
+.more-link::after,
+.pagination .prev::before,
+.pagination .next::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    line-height: inherit;
+    vertical-align: baseline;
+}
+
+.more-link::after,
+.pagination .next::after,
+.site-main nav.navigation .nav-next a::after {
+    content: "\f35a";
+    margin-left: 0.5407911001em;
+}
+
+.backlink::before,
+.pagination .prev::before,
+.site-main nav.navigation .nav-previous a::before {
+    content: "\f359";
+    margin-right: 0.5407911001em;
+}
+
+.sitefront {
+
+    .pagination,
+    .woocommerce-pagination {
+
+        border: 0;
+
+        .page-numbers li .page-numbers {
+
+            padding: 0 !important;
+            border: 0 !important;
+            background: transparent !important;
+            min-width: 2em !important;
+            color: inherit !important;
+        
+            &.current {
+                opacity: .5;
+            }
+
+            &.prev,
+            &.next {
+                font-weight: bold;
+            }
+        }
+    }
+}

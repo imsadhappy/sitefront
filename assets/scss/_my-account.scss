@@ -1,0 +1,195 @@
+html.sitefront {
+
+    body.theme-sitefront {
+
+        .woocommerce-MyAccount-content {
+
+            position: relative;
+
+            .user-locale select {
+                display: block;
+                width: 100%;
+            }
+
+            .logout.button {
+                position: absolute;
+                bottom: -40px;
+                top: auto;
+                right: 0;
+            }
+
+            .toggler.password-change {
+                margin-bottom: -8em;
+                float: right;
+                &.active {
+                    margin-top: 1em;
+                    margin-bottom: 0;
+                    float: none;
+                }
+            }
+
+            .toggled.password-change {
+
+                display: none;
+                padding: 0;
+                background: transparent;
+
+                legend {
+                    display: none;
+                }
+
+                &.active {
+                    display: block;
+                    clear: both;
+                }
+            }
+
+            .woocommerce-orders-table {
+
+                font-size: inherit;
+
+                th {
+                    background: #FFF !important;
+                    padding-top: 0;
+                }
+
+                td {
+                    vertical-align: middle;
+                }
+
+                td:last-child,
+                th:last-child {
+                    text-align: right;
+                }
+
+                .button {
+                    display: inline-block;
+                    margin: 0 auto 10px;
+                }
+
+                .button + .button {
+                    margin-left: 10px;
+                }
+            }
+
+            .woocommerce-order-details {
+
+                table.order_details {
+
+                    &,
+                    th,
+                    td {
+                        background: #FFF;
+                    }
+
+                    tfoot tr > * {
+                        padding: 3px 0;
+                    }
+                    tfoot tr:first-child > * {
+                        padding-top: 30px;
+                    }
+
+                    th:first-child,
+                    td:first-child {
+                        padding-left: 0;
+                    }
+                    th:last-child,
+                    td:last-child {
+                        padding-right: 0;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    html.sitefront {
+
+        body.theme-sitefront {
+
+            .woocommerce-MyAccount-content {
+
+                .woocommerce-orders-table {
+
+                    td:last-child {
+                        padding-left: 0;
+                        padding-right: 0
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    html.sitefront {
+
+        body.theme-sitefront {
+
+            .entry-content .woocommerce-MyAccount-navigation { display: none }
+
+            .woocommerce-MyAccount-content {
+
+                .logout.button {
+                    top: -60px;
+                    bottom: auto;
+                }
+
+                .addresses {
+
+                    a.edit {
+                        background: #000;
+                        color: #FFF;
+                        text-decoration: none !important;
+                        padding: 5px 15px 7px;
+                        margin-bottom: 15px;
+                        display: inline-block;
+                        border-radius: 20px;
+                        font-weight: bold;
+                    }
+                }
+
+                .woocommerce-orders-table {
+
+                    tr.order {
+
+                        @include transform-scale;
+
+                        td {
+
+                            padding: .2em .875em 0;
+                            background: #F1F1F1 !important;
+
+                            &:first-child {
+                                padding-top: .875em;
+                                border-radius: 20px 20px 0 0;
+                            }
+
+                            &:last-child {
+
+                                padding-top: .875em;
+                                border-radius: 0 0 20px 20px;
+
+                                .button {
+                                    margin-bottom: -10px;
+                                }
+                            }
+
+                            &.woocommerce-orders-table__cell-order-actions:before {
+                                display: none;
+                            }
+                        }
+
+                        + tr td:first-child {
+                            margin-top: $marg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

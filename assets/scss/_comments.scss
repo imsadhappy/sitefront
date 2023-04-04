@@ -1,0 +1,215 @@
+#comments {
+
+	.comments-title {
+	    font-size: inherit;
+	    border-bottom: 0;
+	}
+
+	.comment-list {
+
+		.comment {
+
+			position: relative;
+
+			.comment-meta {
+
+				width: 100%;
+				margin: 0;
+				text-align: left;
+				line-height: 1.6;
+				font-size: 80%;
+
+				.avatar {
+					float: left;
+					border-radius: 50%;
+					margin: 0 1em -1em 0;
+				}
+
+				cite {
+					clear: none;
+				}
+
+				.comment-date {
+					float: left;
+				}
+			}
+
+			.comment-content {
+
+				width: auto;
+				float: none;
+				clear: both;
+				margin-bottom: 0;
+				padding-bottom: 0;
+
+				.comment-text {
+					border-radius: 20px;
+					background-color: rgba(0, 0, 0, 0.0125);
+				}
+			}
+		}
+
+		ol.children {
+
+			position: relative;
+			width: 95% !important;
+			margin-left: auto;
+			z-index: 1;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: -3.9em;
+				left: 2em;
+				background: rgba(0,0,0,.05);
+				width: 1px;
+				height: 3.9em;
+			}
+
+			.comment {
+				+ .comment {
+					&:before {
+						content: "";
+						position: absolute;
+						top: -3.9em;
+						left: 2em;
+						background: rgba(0,0,0,.05);
+						width: 1px;
+						height: 3.9em;
+					}
+				}
+			}
+		}
+
+		.reply {
+			text-align: right;
+		}
+
+		#respond {
+			float: none;
+			width: 100% !important;
+			margin-top: 0;
+			background: #fcfcfc;
+			position: relative;
+			z-index: 2;
+		}
+	}
+}
+
+#commentform {
+
+	label {
+
+		&:not([for="wp-comment-cookies-consent"]) {
+		    display: block;
+		}
+
+		&[for="rating"] {
+		    text-indent: 0;
+		    text-align: center;
+		}
+
+		&[for="comment"] {
+			display: none;
+		}
+	}
+
+	.form-submit {
+	    text-align: right;
+	}
+}
+
+#respond {
+    border-radius: 20px;
+}
+
+#reviews {
+
+	padding-bottom: 2em;
+
+	#respond {
+		padding: 0;
+		background: transparent;
+	}
+
+	#comments {
+
+		.review {
+
+			.avatar {
+				border-radius: 50%;
+				margin-right: 20px;
+				width: auto;
+			}
+
+			.comment-text {
+				width: calc(100% - 81px);
+			}
+		}
+	}
+
+    .comment-form {
+
+	    &.toggled {
+	        margin-top: 1em;
+	        display: none;
+	    }
+
+	    &.toggled.active {
+	        display: block;
+	    }
+	}
+
+    .comment-form-toggler {
+        margin-right: 1em;
+    }
+}
+
+html.sitefront {
+
+    body.theme-sitefront {
+
+		.hentry .entry-header .post-comments {
+		    display: none;
+		}
+
+		p.stars {
+		    text-align: center;
+		    display: block;
+		    font-size: 200%;
+		}
+
+	    .woocommerce-noreviews,
+	    p.no-comments {
+	        background-color: transparent;
+	        color: #000;
+	        padding: 0;
+	        border: 0;
+	        * {
+	        	color: #000
+	        }
+	    }
+	}
+}
+
+@media (max-width: 768px) {
+
+    #respond {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+    }
+
+    #reviews {
+
+    	#comments {
+
+			.review {
+
+				.comment-text {
+					width: 100%;
+				}
+			}
+		}
+    }
+}
